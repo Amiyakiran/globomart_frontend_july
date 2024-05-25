@@ -1,0 +1,37 @@
+<div class="row w-100  d-flex justify-content-center align-items-center" style="height: 85vh; margin-top: -40px;">
+    <div class="row w-75 mt-5" style="height: 470px;">
+     
+     <div class="col-md-6 shadow d-flex justify-content-center align-items-center flex-column p-5">
+         <div class="p-3 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px; border: 3px solid red; border-radius: 50%;"><i class="fa-solid fa-user fa-2x text-danger"></i></div>
+         <h2 class="text-center text-danger d-flex">Join Family</h2>
+       <form class=" border rounded p-3 w-100 shadow  mt-4" [formGroup]="registerForm" (ngSubmit)="register()">
+        
+        <div class="mb-4 mt-3">
+            <input type="text" class="form-control" placeholder="Enter Username" formControlName="username" name="uname">
+            <span *ngIf="registerForm.get('username')?.errors && registerForm.get('username')?.touched " class="text-warning">Invalid username</span>
+           </div>
+        <div class="mb-4 mt-3">
+         <input type="text" class="form-control" placeholder="Enter Email" formControlName="email" name="email">
+         <span class="text-warning" *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched " >Invalid email</span>
+        </div>
+        <div class="mb-4">
+         <input type="text" class="form-control" placeholder="Enter Password"formControlName="password" name="pswd">
+         <span class="text-warning" *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched " >Invalid password</span>
+        </div>
+       
+        <div class="mb-3">
+         <button type="submit" class="btn btn-danger w-100">Register</button>
+        </div>
+     </form>
+     </div>
+     <div class="col-md-6 shadow d-flex p-0 justify-content-center align-items-center flex-column text-light" style="background-image: url('https://thumbs.dreamstime.com/b/concept-shopping-purchases-sales-happy-girl-packages-red-background-concept-shopping-purchases-sales-154486697.jpg'); background-size: cover; background-position: center;">
+         <div class="d-flex w-100 justify-content-center align-items-center flex-column" style="background-color:rgba(118, 117, 118, 0.393); height: 100%;">
+             <h4 class="text-light"><i class="fa-brands fa-slack fa-spin fa-2x me-2"></i><span class="fs-3"><b>GloboMart</b></span></h4>
+         <h2>Already Have an Account</h2>
+         <p style="text-align: center;" class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ex magnam fugiat quos non a aliquid corrupti quae explicab Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, impedit quam? Ab amet architecto </p>
+         <a class="btn btn-outline-light"  routerLink="/user/login"> SIGN IN</a>
+         </div>
+     </div>
+    
+    </div>
+ </div>

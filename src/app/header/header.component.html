@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg bg-danger">
+    <div class="container-fluid">
+      <a routerLink="" class="navbar-brand text-light" ><i class="fa-brands fa-slack fa-spin fa-3x me-2"></i><span class="fs-3"><b>GloboMart</b></span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <div class="d-flex justify-content-between w-100">
+           <div>
+  
+           </div>
+            <div class="w-50">
+              <a class="nav-link active d-flex mt-2">
+                <input class="form-control me-2 " type="search" placeholder="Search">
+                <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+              </a>
+            </div>
+     
+          <ul class="navbar-nav  mb-2 mb-lg-0">
+            <li>
+              <a class="nav-link active" routerLink="/wishlist">
+                  <button class="btn btn-outline-light"><i class="fa-solid fa-heart fa-beat me-2"></i>wishlist<span class="badge bg-secondary ms-2"> {{wishlistCount}} </span></button>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link active"routerLink="/cart">
+                  <button class="btn btn-outline-light"><i class="fa-solid fa-cart-shopping me-2"></i>cart<span class="badge bg-secondary ms-2">{{cartCount}}</span></button>
+              </a>
+            </li>
+            <li *ngIf="!loginUserName">
+              <a class="nav-link active"routerLink="/user/login">
+                  <button class="btn btn-outline-light"><i class="fa-solid fa-user me-2"></i>login</button>
+              </a>
+            </li>
+            <li *ngIf="loginUserName" (click)="logout()">
+              <a class="nav-link active">
+                  <button class="btn btn-outline-light"><i class="fa-solid fa-power-off me-2"></i>{{loginUserName}}</button>
+              </a>
+            </li>
+           
+          </ul>
+          
+         </div>
+      </div>
+    </div>
+  </nav>

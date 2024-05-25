@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div style="margin-top: 60px;">
+    <div *ngIf="(allProducts.length==0)" class="empty-wishlist d-flex justify-content-center align-items-center flex-column">
+        <img src="https://www.scholarswing.in/resources/images/empty-cart.png" alt="">
+        <h1 class="fs-1 text-danger" style="font-family: 'Abril Fatface', serif;">Your Wishlist is empty</h1>
+        <button class="btn text-success" style="text-decoration: underline;" routerLink="">Add Your List</button>
+    </div>
+    <div *ngIf="!(allProducts.length==0)" class="container px-4 px-lg-5 mt-5">
+       <h1 class="text-danger text-center" style="font-family: 'Abril Fatface', serif;">Your Wishlist</h1>
+       <div class="mt-5 row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+           <div class="col mb-5" *ngFor="let product of allProducts" >
+               <div class="card h-100">
+                   <!-- Product image-->
+                   <img routerLink="/view-product/{{product.id}}" class="card-img-top" [src]="product.image" alt="..." height="250px" />
+                   <!-- Product details-->
+                   <div class="card-body p-4">
+                       <div class="text-center">
+                           <!-- Product name-->
+                           <h5 class="fw-bolder">{{product.title.slice(0,20)}}...</h5>
+                           <!-- Product price-->
+                           ${{product.price}}
+                       </div>
+                   </div>
+                   <!-- Product actions-->
+                   <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                       <div class="d-flex justify-content-between">
+                           <button class="btn btn-outline-danger " (click)="removeItem(product._id)"><i class="fa-solid fa-trash"></i></button>
+                           <button class="btn btn-outline-success " (click)="addToCart(product)"><i class="fa-solid fa-cart-shopping"></i></button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
+       </div>
+    </div>
+   </div>

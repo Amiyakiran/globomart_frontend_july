@@ -1,0 +1,33 @@
+<div class="row w-100 d-flex justify-content-center align-items-center" style="height: 80vh;">
+    <div class="row w-75 mt-5" style="height: 470px;">
+     
+     <div class="col-md-6 shadow d-flex justify-content-center align-items-center flex-column p-5">
+         <div class="p-3 d-flex justify-content-center align-items-center" style="height: 70px; width: 70px; border: 3px solid red; border-radius: 50%;"><i class="fa-solid fa-user fa-2x text-danger"></i></div>
+         <h1 class="text-center text-danger d-flex">Welcome User</h1>
+       <form class=" border rounded p-3 w-100 shadow  mt-5" [formGroup]="loginForm" (ngSubmit)="login()">
+        
+        <div class="mb-4 mt-3">
+            <input type="text" class="form-control" placeholder="Enter Email" formControlName="email" name="email">
+            <span class="text-warning" *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched " >Invalid email</span>
+           </div>
+           <div class="mb-4">
+            <input type="text" class="form-control" placeholder="Enter Password"formControlName="password" name="pswd">
+            <span class="text-warning" *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched " >Invalid password</span>
+           </div>
+       
+        <div class="mb-3">
+         <button class="btn btn-danger w-100" type="submit">Login</button>
+        </div>
+     </form>
+     </div>
+     <div class="col-md-6 shadow p-0 d-flex justify-content-center align-items-center flex-column text-light" style="background-image: url('https://img.freepik.com/premium-photo/woman-jumping-while-holding-her-shopping-bags_23-2148302844.jpg?w=360'); background-size: cover;">
+         <div class="d-flex justify-content-center align-items-center flex-column" style="background-color:rgba(128, 128, 128, 0.276); height: 100%;">
+             <h4 class="text-light"><i class="fa-brands fa-slack fa-spin fa-2x me-2"></i><span class="fs-3"><b>GloboMart</b></span></h4>
+         <h2>Din't Have an Account</h2>
+         <p style="text-align: center;" class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ex magnam fugiat quos non a aliquid corrupti quae explicab Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, impedit quam? Ab amet architecto </p>
+         <a class="btn btn-outline-light"  routerLink="/user/register"> SIGN UP</a>
+         </div>
+     </div>
+    
+    </div>
+ </div>
